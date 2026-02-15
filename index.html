@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Panel de Códigos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="netflix-logo">NETFLIX</div>
+        
+        <div class="main-card">
+            <h1>Panel de Códigos Netflix</h1>
+            <p class="subtitle">Accede a tus códigos de verificación recientes</p>
+            
+            <div class="input-group">
+                <label for="email">📧 Tu correo de Netflix</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="ejemplo@correo.com"
+                    autocomplete="email"
+                >
+                <small>Ingrese el correo donde recibes los códigos de Netflix</small>
+            </div>
+            
+            <button class="btn-primary" onclick="goToPanel()">
+                Ver mis códigos 🔍
+            </button>
+            
+            <div class="info-box">
+                <div class="info-icon">ℹ️</div>
+                <div class="info-text">
+                    <strong>Solo verás códigos de los últimos 15 minutos</strong>
+                    <p>Después de ese tiempo, los códigos expiran automáticamente.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-logo">🔴</div>
+            <p>Sistema automático de códigos Netflix</p>
+            <p>WhatsApp: +51 942 354 613 | Telegram: @Fyis2</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Panel de Códigos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+    <div class="panel-container">
+        <header class="panel-header">
+            <div class="header-content">
+                <div class="netflix-logo">NETFLIX</div>
+                <div class="header-info">
+                    <h1>Panel de Códigos</h1>
+                    <p class="email-display" id="userEmail"></p>
+                </div>
+            </div>
+            <button class="btn-reset" onclick="resetPanel()">
+                🔄 Reiniciar
+            </button>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('rapido')" id="tab-rapido">
+                🚀 Modo Rápido
+            </button>
+            <button class="tab-btn" onclick="switchTab('guiado')" id="tab-guiado">
+                📖 Modo Guiado
+            </button>
+        </div>
+        
+        <!-- MODO RÁPIDO -->
+        <div class="tab-content active" id="content-rapido">
+            <div class="quick-mode">
+                <button class="btn-primary" onclick="fetchCodes()">
+                    🔍 Actualizar códigos
+                </button>
+                
+                <div class="last-update" id="lastUpdate">
+                    Última actualización: --:--
+                </div>
+                
+                <div id="loadingSpinner" class="loading-container" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Buscando tus códigos...</p>
+                    <div class="timer" id="timer">10s</div>
+                    <button class="btn-secondary" onclick="cancelFetch()">Cancelar</button>
+                </div>
+                
+                <div id="codesContainer" class="codes-container">
+                    <!-- Los códigos se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- MODO GUIADO -->
+        <div class="tab-content" id="content-guiado">
+            <div class="guided-mode">
+                <div class="guided-header">
+                    <h2>❓ ¿Qué mensaje ves en tu TV o dispositivo?</h2>
+                    <p>Selecciona el problema que tienes para ver la solución paso a paso</p>
+                </div>
+                
+                <div class="options-container">
+                    <div class="option-card" onclick="showGuidedStep('codigo-email')">
+                        <div class="option-icon">📺</div>
+                        <div class="option-content">
+                            <h3>"Ingresa el código que enviamos a tu email"</h3>
+                            <p>Pantalla con 4 cajas para escribir código</p>
+                        </div>
+                        <div class="option-arrow">→</div>
+                    </div>
+                    
+                    <div class="option-card" onclick="showGuidedStep('tv-hogar')">
+                        <div class="option-icon">🏠</div>
+                        <div class="option-content">
+                            <h3>"Tu televisor no forma parte del hogar Netflix"</h3>
+                            <p>Mensaje sobre actualizar el hogar</p>
+                        </div>
+                        <div class="option-arrow">→</div>
+                    </div>
+                    
+                    <div class="option-card" onclick="showGuidedStep('dispositivo-hogar')">
+                        <div class="option-icon">📱</div>
+                        <div class="option-content">
+                            <h3>"Tu dispositivo no forma parte del Hogar con Netflix"</h3>
+                            <p>Opción para ver temporalmente</p>
+                        </div>
+                        <div class="option-arrow">→</div>
+                    </div>
+                    
+                    <div class="option-card" onclick="showGuidedStep('sin-mensaje')">
+                        <div class="option-icon">❌</div>
+                        <div class="option-content">
+                            <h3>No veo ningún mensaje específico</h3>
+                            <p>Ayuda general</p>
+                        </div>
+                        <div class="option-arrow">→</div>
+                    </div>
+                </div>
+                
+                <!-- Pasos guiados (se mostrarán dinámicamente) -->
+                <div id="guidedSteps" class="guided-steps" style="display: none;">
+                    <!-- Contenido dinámico -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>FyisBot v2.0 | WhatsApp: +51 942 354 613 | Telegram: @Fyis2</p>
+        </footer>
+    </div>
+    
+    <script src="js/panel.js"></script>
+</body>
+</html>
